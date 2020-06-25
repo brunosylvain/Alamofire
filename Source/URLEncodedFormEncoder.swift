@@ -197,7 +197,7 @@ public final class URLEncodedFormEncoder {
             case .useDefaultKeys: return key
             case .convertToSnakeCase: return convertToSnakeCase(key)
             case .convertToKebabCase: return convertToKebabCase(key)
-            case .capitalized: return String(key.prefix(1).uppercased() + key.dropFirst())
+            case .capitalized: return String(String(key.prefix(1)).uppercased() + String(key.dropFirst()))
             case .uppercased: return key.uppercased()
             case .lowercased: return key.lowercased()
             case let .custom(encoding): return encoding(key)
